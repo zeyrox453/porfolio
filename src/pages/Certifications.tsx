@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Award, ExternalLink, ShieldCheck, Network, Cpu, Database, Zap, Settings } from 'lucide-react';
 
 interface Certification {
@@ -60,6 +61,19 @@ const certifications: Certification[] = [
 ];
 
 function Certifications() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "https://cdn.credly.com/assets/utilities/embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
   return (
     <div className="fade-in container" style={{ paddingBottom: '5rem' }}>
       <div style={{ textAlign: 'center', margin: '4rem 0' }}>
