@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, GraduationCap, Send, CheckCircle2 } from 'lucide-react';
+import { Mail, Phone, MapPin, GraduationCap, Send, CheckCircle2, Github } from 'lucide-react';
 
 function Contact() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
@@ -84,6 +84,16 @@ function Contact() {
             <div>
               <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Formation Actuelle</p>
               <p style={{ fontWeight: '600' }}>BTS SIO SISR - 2ème année</p>
+            </div>
+          </div>
+
+          <div className="glass" style={{ padding: '2rem', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+            <div style={{ background: 'rgba(37, 99, 235, 0.1)', padding: '1rem', borderRadius: '50%' }}>
+              <Github color="var(--primary)" size={24} />
+            </div>
+            <div>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Versionning & Git</p>
+              <a href="https://github.com/zeyrox453/porfolio" target="_blank" rel="noopener noreferrer" style={{ fontWeight: '600' }}>zeyrox453/porfolio</a>
             </div>
           </div>
         </div>
